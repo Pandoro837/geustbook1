@@ -64,7 +64,14 @@
 				<td style="width: 35px"><%=guestBookInfo.getNo() %></td>
 				<td style="width: 100px"><%=guestBookInfo.getName() %></td>
 				<td style="width: 280px"><%=guestBookInfo.getDate() %></td>
-				<td style="width: 65px; text-align: center;"><a href = "./deleteForm.jsp">[삭제]</a></td>
+				<td style="width: 65px; text-align: center;">
+						<form action = "./deleteForm.jsp" method = "post">
+							<a href = "./deleteForm.jsp?no=<%=guestBookInfo.getNo() %>">	
+							<!--파라미터 값으로 No값을 넘긴다, 파라미터를 submit으로 넘길 방법이 마땅하지 않다면, 주소에 파라미터 값을 넣어줄 수 있다 -->
+								[삭제] 
+							</a>
+						</form>
+				</td>
 			</tr>
 			<tr>
 				<td colspan = "4"><%=guestBookInfo.getContent() %></td>

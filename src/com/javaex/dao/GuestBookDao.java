@@ -111,7 +111,7 @@ public class GuestBookDao {
 		close();
 	}
 
-	public void delete(String pw) {
+	public void delete(String pw, int no) {
 		getConnection();
 		
 		try {
@@ -120,9 +120,11 @@ public class GuestBookDao {
 			query+= " FROM ";
 			query+= " guestbook ";
 			query+= " WHERE pw = ? ";
+			query+= "   AND no = ? ";
 			
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, pw);
+			pstmt.setInt(2, no);
 			
 			pstmt.executeUpdate();
 			
