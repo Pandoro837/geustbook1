@@ -66,7 +66,7 @@ public class GuestBookDao {
 			query+= " 		TO_CHAR(reg_date, 'yyyy-mm-dd hh:mm:ss') reg_date ";
 			query+= " FROM ";
 			query+= " 		guestbook ";
-			query+= " ORDER BY no ASC ";
+			query+= " ORDER BY reg_date ASC ";
 			
 			pstmt = conn.prepareStatement(query);
 			rs = pstmt.executeQuery();
