@@ -3,7 +3,6 @@
 <%@	page import="com.javaex.dao.GuestBookDao" %>
 
 <%
-	request.setCharacterEncoding("UTF-8");
 	GuestBookDao guestBookDao = new GuestBookDao();
 
 	//파라미터 값 받기
